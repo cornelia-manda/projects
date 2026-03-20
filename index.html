@@ -23,8 +23,16 @@
             background-color: #E0E2DF;
         }
 
+        /* Enforcing Playfair Display for headings and all links */
         h1, h2, h3, a, th {
             font-family: "Playfair Display", serif;
+        }
+
+        /* --- Link Reset: Prevents blue/purple/white default colors --- */
+        a, a:visited, a:active {
+            text-decoration: none;
+            color: inherit; 
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -34,7 +42,7 @@
             min-height: 100vh;
         }
 
-        /* Navigation System */
+        /* Navigation Area */
         header {
             display: grid;
             grid-template-columns: 30% 70%;
@@ -66,25 +74,26 @@
             vertical-align: middle;
         }
 
+        /* Ensuring main nav links use Playfair Display */
         nav a {
-            text-decoration: none;
-            color: #655C5B;
+            color: #655C5B !important; 
+            font-family: "Playfair Display", serif;
             font-size: 1.1em;
-            transition: color 0.3s ease;
             display: inline-block;
             padding: 10px 0;
         }
 
         nav a:hover {
-            color: white;
+            color: white !important;
+            cursor: pointer;
         }
 
-        /* Highlights 'Projects' as the active page */
-        nav li:nth-child(3) a {
-            color: white; 
+        /* Highlights 'Projects' as active page (3rd item) */
+        nav > ul > li:nth-child(3) > a {
+            color: white !important; 
         }
 
-        /* Dropdown Menu */
+        /* --- Dropdown Menu Styles --- */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -104,12 +113,14 @@
             margin: 0;
         }
 
-        .dropdown-content a {
+        /* FIX: Dropdown links strictly set to Playfair Display and dark grey */
+        .dropdown-content a, .dropdown-content a:visited {
             color: #655C5B !important; 
             padding: 12px 20px;
             display: block;
-            font-size: 0.95em;
-            font-family: "Roboto", sans-serif;
+            font-size: 1.1em;
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
         }
 
         .dropdown-content a:hover {
@@ -121,7 +132,7 @@
             display: block;
         }
 
-        /* Page Title  */
+        /* Page Title */
         .page-title {
             text-align: center;
             color: #816B6E;
@@ -132,7 +143,7 @@
             font-weight: 700;
         }
 
-        /* Category Grid [cite: 3, 4] */
+        /* Category Grid Navigation */
         .category-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -142,10 +153,10 @@
 
         .category-item {
             position: relative;
-            height: 350px;
+            height: 400px;
             overflow: hidden;
             background-color: #fff;
-            text-decoration: none;
+            display: block;
         }
 
         .category-item img {
@@ -176,10 +187,31 @@
             font-weight: 600; 
             letter-spacing: 1px;
             text-transform: uppercase;
-            text-align: center;
         }
 
-        /* Carousel Section [cite: 7] */
+        .uni-label {
+            color: #C99B9B;
+            font-size: 0.9em; 
+            font-family: "Roboto", sans-serif;
+            font-weight: 900; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            position: absolute;
+            left: 10px; 
+            top: 35%; 
+            line-height: 1; 
+            margin: 0;
+            z-index: 15;
+            transform-origin: bottom left;
+            transform: rotate(90deg) translateX(-50%); 
+        }
+
+        .category-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Carousel Section */
         .carousel-section {
             background-color: rgba(221, 189, 190, 0.2);
             padding: 60px 0;
@@ -193,9 +225,9 @@
             font-size: 2.5em;
             margin-bottom: 40px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Wrapper to hold arrows and container */
         .carousel-wrapper {
             position: relative;
             padding: 0 80px;
@@ -219,7 +251,6 @@
             background: white;
             scroll-snap-align: start;
             box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.1);
-            text-decoration: none;
             display: flex;
             flex-direction: column;
         }
@@ -237,7 +268,30 @@
             flex-direction: column;
         }
 
-        /* Carousel Navigation Arrows */
+        .project-card h3 {
+            color: #816B6E;
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+        }
+
+        .project-card p {
+            color: #5D4F51;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .project-date {
+            margin-top: auto;
+            color: #C99B9B;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+            font-family: "Roboto", sans-serif;
+        }
+
         .carousel-arrow {
             position: absolute;
             top: 50%;
@@ -254,7 +308,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
@@ -266,10 +319,11 @@
         .arrow-left { left: 15px; }
         .arrow-right { right: 15px; }
 
-        /* Footer */
+        /* Footer matching Portfolio & Contact pages */
         footer {
             text-align: center;
             padding: 40px;
+            margin-top: 40px;
             color: #655C5B;
             font-size: 0.9em;
             border-top: 1px solid #DDBDBE; 
@@ -290,17 +344,23 @@
             color: #816B6E;
             font-size: 1.1em;
             padding: 5px 10px 5px 0;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .footer-table th:not(:first-child) {
+            padding-left: 30px; 
         }
 
         .footer-table td {
             padding: 5px 0;
             font-family: "Roboto", sans-serif;
+            vertical-align: middle;
+            white-space: nowrap;
         }
 
-        .footer-table a {
-            color: #655C5B;
-            text-decoration: none;
-            font-weight: 700;
+        .footer-table a:hover {
+            color: #816B6E !important;
         }
 
         .copyright {
@@ -338,19 +398,23 @@
 
         <main class="category-grid">
             <a href="#" class="category-item">
-                <img src="videography-thumb.jpg" alt="Videography">
+                <div class="uni-label">@ University of Waterloo</div>
+                <img src="videography-thumb.jpg" alt="Videography Category">
                 <div class="category-label"><h2>Videography</h2></div>
             </a>
             <a href="#" class="category-item">
-                <img src="branding-thumb.jpg" alt="Branding">
+                <div class="uni-label">@ University of Waterloo</div>
+                <img src="branding-thumb.jpg" alt="Branding Category">
                 <div class="category-label"><h2>Branding</h2></div>
             </a>
             <a href="#" class="category-item">
-                <img src="webapp-thumb.jpg" alt="Web and App">
+                <div class="uni-label">@ University of Waterloo</div>
+                <img src="webapp-thumb.jpg" alt="Web and App Category">
                 <div class="category-label"><h2>Web & App</h2></div>
             </a>
             <a href="#" class="category-item">
-                <img src="graphic-thumb.jpg" alt="Graphic Design">
+                <div class="uni-label">@ University of Waterloo</div>
+                <img src="graphic-thumb.jpg" alt="Graphic Design Category">
                 <div class="category-label"><h2>Graphic Design</h2></div>
             </a>
         </main>
@@ -363,7 +427,6 @@
                 <button class="carousel-arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
 
                 <div class="carousel-container" id="projectCarousel">
-                    
                     <a href="#" class="project-card">
                         <img src="Ger102-film.png" alt="Äpfel im Mai">
                         <div class="project-card-content">
@@ -372,7 +435,6 @@
                             <span class="project-date">2025</span>
                         </div>
                     </a>
-
                     <a href="#" class="project-card">
                         <img src="Ger101-film.jpeg" alt="Befolgte Schritte">
                         <div class="project-card-content">
@@ -381,16 +443,14 @@
                             <span class="project-date">2024</span>
                         </div>
                     </a>
-
                     <a href="#" class="project-card">
                         <img src="shortfilm.jpeg" alt="What Could Go Wrong?">
                         <div class="project-card-content">
                             <h3>What Could Go Wrong?</h3>
-                            <p>A film exploring personal anxiety and emotional honesty. Won First Place at the Eagles News Festival.</p>
+                            <p>A poignant film exploring personal anxiety and self-doubt. Won First Place at Eagles News Festival.</p>
                             <span class="project-date">2023 / 2024</span>
                         </div>
                     </a>
-
                     <a href="#" class="project-card">
                         <img src="2nd-place.png" alt="Sneakers">
                         <div class="project-card-content">
@@ -399,7 +459,6 @@
                             <span class="project-date">2022 / 2023</span>
                         </div>
                     </a>
-
                 </div>
             </div>
         </section>
@@ -425,7 +484,7 @@
     <script>
         function scrollCarousel(direction) {
             const carousel = document.getElementById('projectCarousel');
-            const scrollAmount = 380; // Card width + gap
+            const scrollAmount = 380; 
             carousel.scrollBy({
                 left: direction * scrollAmount,
                 behavior: 'smooth'
