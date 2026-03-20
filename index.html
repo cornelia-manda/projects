@@ -28,7 +28,7 @@
             font-family: "Playfair Display", serif;
         }
 
-        /* --- Link Reset: Prevents blue/purple/white default colors --- */
+        /* --- Link Reset: Prevents blue/purple default colors --- */
         a, a:visited, a:active {
             text-decoration: none;
             color: inherit; 
@@ -74,7 +74,6 @@
             vertical-align: middle;
         }
 
-        /* Ensuring main nav links use Playfair Display */
         nav a {
             color: #655C5B !important; 
             font-family: "Playfair Display", serif;
@@ -88,7 +87,7 @@
             cursor: pointer;
         }
 
-        /* Highlights 'Projects' as active page (3rd item) */
+        /* Highlights 'Projects' as active page */
         nav > ul > li:nth-child(3) > a {
             color: white !important; 
         }
@@ -113,7 +112,6 @@
             margin: 0;
         }
 
-        /* FIX: Dropdown links strictly set to Playfair Display and dark grey */
         .dropdown-content a, .dropdown-content a:visited {
             color: #655C5B !important; 
             padding: 12px 20px;
@@ -132,12 +130,33 @@
             display: block;
         }
 
+        /* --- Back Button Style --- */
+        .back-button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1em;
+            background-color: #C99B9B;
+            color: white !important;
+            text-decoration: none;
+            font-family: "Playfair Display", serif;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            margin-left: 80px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #816B6E;
+            transform: rotate(-2deg);
+        }
+
         /* Page Title */
         .page-title {
             text-align: center;
             color: #816B6E;
             font-size: 4.5em;
-            margin: 50px 0 30px 0;
+            margin: 30px 0 30px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
@@ -394,6 +413,8 @@
             </nav>
         </header>
 
+        <a href="https://cornelia-manda.github.io/portfolio/" class="back-button">← Back to Portfolio</a>
+
         <h1 class="page-title">PROJECTS</h1>
 
         <main class="category-grid">
@@ -431,7 +452,7 @@
                         <img src="Ger102-film.png" alt="Äpfel im Mai">
                         <div class="project-card-content">
                             <h3>Äpfel im Mai</h3>
-                            <p>Award-winning short film created for GER102, focusing on vocabulary integration and visual storytelling.</p>
+                            <p>Award-winning short film created for GER102, focusing on vocabulary integration.</p>
                             <span class="project-date">2025</span>
                         </div>
                     </a>
@@ -439,7 +460,7 @@
                         <img src="Ger101-film.jpeg" alt="Befolgte Schritte">
                         <div class="project-card-content">
                             <h3>Befolgte Schritte</h3>
-                            <p>Director and editor for this university short film project utilizing class-taught German vocabulary.</p>
+                            <p>Director and editor for this university short film project utilizing class German vocabulary.</p>
                             <span class="project-date">2024</span>
                         </div>
                     </a>
@@ -447,7 +468,7 @@
                         <img src="shortfilm.jpeg" alt="What Could Go Wrong?">
                         <div class="project-card-content">
                             <h3>What Could Go Wrong?</h3>
-                            <p>A poignant film exploring personal anxiety and self-doubt. Won First Place at Eagles News Festival.</p>
+                            <p>A poignant film exploring personal anxiety. Won First Place at Eagles News Festival.</p>
                             <span class="project-date">2023 / 2024</span>
                         </div>
                     </a>
@@ -455,7 +476,7 @@
                         <img src="2nd-place.png" alt="Sneakers">
                         <div class="project-card-content">
                             <h3>Sneakers</h3>
-                            <p>A four-minute horror-comedy about a Grade 11 student. Winner of Outstanding Achievement in Film.</p>
+                            <p>Horror-comedy winner of Outstanding Achievement in Film at Eagles View.</p>
                             <span class="project-date">2022 / 2023</span>
                         </div>
                     </a>
