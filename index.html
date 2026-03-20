@@ -130,7 +130,7 @@
             display: block;
         }
 
-        /* --- Back Button Style --- */
+        /* --- Back Button Style (Reduced Bottom Margin) --- */
         .back-button {
             display: inline-block;
             padding: 12px 30px;
@@ -143,7 +143,7 @@
             transition: all 0.4s ease;
             margin-left: 80px;
             margin-top: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 5px; /* Reduced from 20px to 5px */
         }
 
         .back-button:hover {
@@ -151,12 +151,12 @@
             transform: rotate(-2deg);
         }
 
-        /* Page Title */
+        /* --- Page Title (Reduced Top Margin) --- */
         .page-title {
             text-align: center;
             color: #816B6E;
             font-size: 4.5em;
-            margin: 30px 0 30px 0;
+            margin: 0px 0 30px 0; /* Reduced top margin from 30px to 0px */
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
@@ -338,7 +338,7 @@
         .arrow-left { left: 15px; }
         .arrow-right { right: 15px; }
 
-        /* Footer matching Portfolio & Contact pages */
+        /* Footer */
         footer {
             text-align: center;
             padding: 40px;
@@ -393,7 +393,15 @@
 
     <div class="container">
         
-        <header>
+        <header {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            align-items: center;
+            background-color: #DDBDBE;
+            padding: 17px 60px;
+            position: relative;
+            z-index: 1000;
+        }>
             <div class="logo">Cornelia Manda</div>
             <nav>
                 <ul>
@@ -452,7 +460,7 @@
                         <img src="Ger102-film.png" alt="Äpfel im Mai">
                         <div class="project-card-content">
                             <h3>Äpfel im Mai</h3>
-                            <p>Award-winning short film created for GER102, focusing on vocabulary integration.</p>
+                            <p>Award-winning short film created for GER102, focusing on vocabulary integration and visual storytelling.</p>
                             <span class="project-date">2025</span>
                         </div>
                     </a>
@@ -460,7 +468,7 @@
                         <img src="Ger101-film.jpeg" alt="Befolgte Schritte">
                         <div class="project-card-content">
                             <h3>Befolgte Schritte</h3>
-                            <p>Director and editor for this university short film project utilizing class German vocabulary.</p>
+                            <p>Director and editor for this university short film project utilizing class-taught German vocabulary.</p>
                             <span class="project-date">2024</span>
                         </div>
                     </a>
@@ -468,7 +476,7 @@
                         <img src="shortfilm.jpeg" alt="What Could Go Wrong?">
                         <div class="project-card-content">
                             <h3>What Could Go Wrong?</h3>
-                            <p>A poignant film exploring personal anxiety. Won First Place at Eagles News Festival.</p>
+                            <p>A poignant film exploring personal anxiety and self-doubt. Won First Place at Eagles News Festival.</p>
                             <span class="project-date">2023 / 2024</span>
                         </div>
                     </a>
@@ -476,7 +484,7 @@
                         <img src="2nd-place.png" alt="Sneakers">
                         <div class="project-card-content">
                             <h3>Sneakers</h3>
-                            <p>Horror-comedy winner of Outstanding Achievement in Film at Eagles View.</p>
+                            <p>A four-minute horror-comedy about a Grade 11 student. Winner of Outstanding Achievement in Film.</p>
                             <span class="project-date">2022 / 2023</span>
                         </div>
                     </a>
