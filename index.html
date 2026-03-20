@@ -10,24 +10,16 @@
 
     <style>
         /* Global Reset & Typography */
-        * {
-            box-sizing: border-box;
-        }
-
+        * { box-sizing: border-box; }
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: "Roboto", sans-serif;
-            font-size: 16px;
-            color: #333;
+            font-size: 16px; color: #333;
             background-color: #E0E2DF;
         }
 
-        h1, h2, h3, a, th {
-            font-family: "Playfair Display", serif;
-        }
+        h1, h2, h3, a, th { font-family: "Playfair Display", serif; }
 
-        /* --- Link Reset: Prevents blue/purple default colors --- */
         a, a:visited, a:active {
             text-decoration: none;
             color: inherit; 
@@ -35,187 +27,80 @@
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #E0E2DF;
-            min-height: 100vh;
+            max-width: 1200px; margin: 0 auto;
+            background-color: #E0E2DF; min-height: 100vh;
         }
 
         /* Navigation Area */
         header {
-            display: grid;
-            grid-template-columns: 30% 70%;
-            align-items: center;
-            background-color: #DDBDBE;
-            padding: 17px 60px;
-            position: relative;
-            z-index: 1000;
+            display: grid; grid-template-columns: 30% 70%;
+            align-items: center; background-color: #DDBDBE;
+            padding: 17px 60px; position: relative; z-index: 1000;
         }
         
-        .logo {
+        .logo { 
             font-family: "Playfair Display", serif;
-            font-size: 1.5em;
-            letter-spacing: 1px;
-            color: #655C5B;
+            font-size: 1.5em; letter-spacing: 1px; color: #655C5B; 
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: right;
-        }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: right; }
+        nav li { display: inline-block; margin-left: 40px; position: relative; vertical-align: middle; }
+        nav a { color: #655C5B !important; font-size: 1.1em; display: inline-block; padding: 10px 0; }
+        nav a:hover { color: white !important; cursor: pointer; }
 
-        nav li {
-            display: inline-block;
-            margin-left: 40px;
-            position: relative; 
-            vertical-align: middle;
-        }
+        nav > ul > li:nth-child(3) > a { color: white !important; }
 
-        nav a {
-            color: #655C5B !important; 
-            font-family: "Playfair Display", serif;
-            font-size: 1.1em;
-            display: inline-block;
-            padding: 10px 0;
-        }
-
-        nav a:hover {
-            color: white !important;
-            cursor: pointer;
-        }
-
-        nav > ul > li:nth-child(3) > a {
-            color: white !important; 
-        }
-
-        /* --- Dropdown Menu Styles --- */
         .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #DDBDBE; 
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-            z-index: 100;
-            text-align: left;
-            padding: 10px 0;
-            top: 100%; 
-            left: 0;
-            margin-top: -5px;
+            display: none; position: absolute; background-color: #DDBDBE; 
+            min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            z-index: 100; text-align: left; padding: 10px 0; top: 100%; left: 0; margin-top: -5px;
         }
 
-        .dropdown-content li {
-            display: block;
-            margin: 0;
-        }
+        .dropdown-content li { display: block; margin: 0; }
+        .dropdown-content a { color: #655C5B !important; padding: 12px 20px; display: block; font-size: 1.1em; font-family: "Playfair Display", serif; font-weight: 400; }
+        .dropdown-content a:hover { background-color: #E0E2DF; color: #816B6E !important; }
+        .dropdown:hover .dropdown-content { display: block; }
 
-        .dropdown-content a, .dropdown-content a:visited {
-            color: #655C5B !important; 
-            padding: 12px 20px;
-            display: block;
-            font-size: 1.1em;
-            font-family: "Playfair Display", serif;
-            font-weight: 400;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #E0E2DF;
-            color: #816B6E !important;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* --- Back Button Style --- */
         .back-button {
-            display: inline-block;
-            padding: 12px 30px;
-            font-size: 1em;
-            background-color: #C99B9B;
-            color: white !important;
-            text-decoration: none;
-            font-family: "Playfair Display", serif;
-            font-weight: bold;
-            transition: all 0.4s ease;
-            margin-left: 80px;
-            margin-top: 20px;
-            margin-bottom: 5px;
+            display: inline-block; padding: 12px 30px; font-size: 1em; background-color: #C99B9B;
+            color: white !important; font-weight: bold; transition: all 0.4s ease;
+            margin-left: 80px; margin-top: 20px; margin-bottom: 5px;
         }
+        .back-button:hover { background-color: #816B6E; transform: rotate(-2deg); }
 
-        .back-button:hover {
-            background-color: #816B6E;
-            transform: rotate(-2deg);
-        }
-
-        /* --- Page Title --- */
         .page-title {
-            text-align: center;
-            color: #816B6E;
-            font-size: 4.5em;
-            margin: 0px 0 30px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
+            text-align: center; color: #816B6E; font-size: 4.5em; margin: 0px 0 30px 0;
+            text-transform: uppercase; letter-spacing: 2px; font-weight: 700;
         }
 
         /* Category Grid Navigation */
         .category-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 0 80px 60px 80px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 0 80px 60px 80px;
         }
 
-        .category-item {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-            background-color: #fff;
-            display: block;
-        }
-
-        .category-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
+        .category-item { position: relative; height: 400px; overflow: hidden; background-color: #fff; display: block; }
+        .category-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
 
         .category-label {
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(101, 92, 91, 0.85); 
-            padding: 40px 0; 
-            z-index: 10;
+            display: flex; align-items: center; justify-content: center; position: absolute;
+            bottom: 0; left: 0; width: 100%; background-color: rgba(101, 92, 91, 0.85); 
+            padding: 40px 0; z-index: 10;
         }
 
-        .category-label h2 {
-            color: white;
-            font-size: 2em;
-            margin: 0;
-            font-weight: 600; 
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+        .category-label h2 { color: white; font-size: 2em; margin: 0; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
 
+        /* FIX: IMPROVED VISIBILITY FOR UNI LABEL */
         .uni-label {
-            color: #C99B9B;
-            font-size: 0.9em; 
+            color: #FFFFFF; /* Bright White */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Drop shadow for contrast */
+            font-size: 0.95em; 
             font-family: "Roboto", sans-serif;
             font-weight: 900; 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             white-space: nowrap;
             position: absolute;
-            left: 10px; 
+            left: 15px; 
             top: 35%; 
             line-height: 1; 
             margin: 0;
@@ -224,173 +109,43 @@
             transform: rotate(90deg) translateX(-50%); 
         }
 
-        .category-item:hover img {
-            transform: scale(1.05);
-        }
+        .category-item:hover img { transform: scale(1.05); }
 
         /* Carousel Section */
-        .carousel-section {
-            background-color: rgba(221, 189, 190, 0.2);
-            padding: 60px 0;
-            margin-top: 40px;
-            position: relative;
-        }
+        .carousel-section { background-color: rgba(221, 189, 190, 0.2); padding: 60px 0; margin-top: 40px; position: relative; }
+        .carousel-title { text-align: center; color: #816B6E; font-size: 2.5em; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+        .carousel-wrapper { position: relative; padding: 0 80px; }
+        .carousel-container { display: flex; overflow-x: auto; gap: 30px; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; }
+        .carousel-container::-webkit-scrollbar { display: none; }
 
-        .carousel-title {
-            text-align: center;
-            color: #816B6E;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .carousel-wrapper {
-            position: relative;
-            padding: 0 80px;
-        }
-
-        .carousel-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 30px;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-            scroll-behavior: smooth;
-        }
-
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .project-card {
-            flex: 0 0 350px;
-            background: white;
-            scroll-snap-align: start;
-            box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-card-content {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card h3 {
-            color: #816B6E;
-            margin: 0 0 10px 0;
-            font-size: 1.4em;
-        }
-
-        .project-card p {
-            color: #5D4F51;
-            font-size: 0.9em;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            font-family: "Roboto", sans-serif;
-        }
-
-        .project-date {
-            margin-top: auto;
-            color: #C99B9B;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.8em;
-            letter-spacing: 1px;
-            font-family: "Roboto", sans-serif;
-        }
+        .project-card { flex: 0 0 350px; background: white; scroll-snap-align: start; box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.1); display: flex; flex-direction: column; }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; }
+        .project-card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-card h3 { color: #816B6E; margin: 0 0 10px 0; font-size: 1.4em; }
+        .project-card p { color: #5D4F51; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px; font-family: "Roboto", sans-serif; }
+        .project-date { margin-top: auto; color: #C99B9B; font-weight: 700; text-transform: uppercase; font-size: 0.8em; letter-spacing: 1px; font-family: "Roboto", sans-serif; }
 
         .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #816B6E;
-            color: white;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            z-index: 20;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%;
+            background-color: #816B6E; color: white; border: none; font-size: 1.5em; cursor: pointer; z-index: 20;
+            display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
-        .carousel-arrow:hover {
-            background-color: #C99B9B;
-            transform: translateY(-50%) scale(1.1);
-        }
-
+        .carousel-arrow:hover { background-color: #C99B9B; transform: translateY(-50%) scale(1.1); }
         .arrow-left { left: 15px; }
         .arrow-right { right: 15px; }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px;
-            margin-top: 40px;
-            color: #655C5B;
-            font-size: 0.9em;
-            border-top: 1px solid #DDBDBE; 
-        }
-
-        .footer-table-wrapper {
-            display: flex; 
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .footer-table {
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        .footer-table th {
-            color: #816B6E;
-            font-size: 1.1em;
-            padding: 5px 10px 5px 0;
-            vertical-align: middle;
-            white-space: nowrap;
-        }
-
-        .footer-table th:not(:first-child) {
-            padding-left: 30px; 
-        }
-
-        .footer-table td {
-            padding: 5px 0;
-            font-family: "Roboto", sans-serif;
-            vertical-align: middle;
-            white-space: nowrap;
-        }
-
-        .footer-table a:hover {
-            color: #816B6E !important;
-        }
-
-        .copyright {
-            margin-top: 20px;
-            opacity: 0.8;
-            font-size: 0.8em;
-        }
+        footer { text-align: center; padding: 40px; margin-top: 40px; color: #655C5B; font-size: 0.9em; border-top: 1px solid #DDBDBE; }
+        .footer-table-wrapper { display: flex; justify-content: center; margin-bottom: 20px; }
+        .footer-table { border-collapse: collapse; text-align: left; }
+        .footer-table th { color: #816B6E; font-size: 1.1em; padding: 5px 10px 5px 0; vertical-align: middle; white-space: nowrap; }
+        .footer-table th:not(:first-child) { padding-left: 30px; }
+        .footer-table td { padding: 5px 0; font-family: "Roboto", sans-serif; vertical-align: middle; white-space: nowrap; }
+        .copyright { margin-top: 20px; opacity: 0.8; font-size: 0.8em; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
         <header>
             <div class="logo">Cornelia Manda</div>
             <nav>
@@ -440,13 +195,12 @@
 
         <section class="carousel-section">
             <h2 class="carousel-title">ALL PROJECTS</h2>
-            
             <div class="carousel-wrapper">
                 <button class="carousel-arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
                 <button class="carousel-arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
-
                 <div class="carousel-container" id="projectCarousel">
-                    <a href="#" class="project-card">
+                    
+                    <a href="https://cornelia-manda.github.io/apfel-in-mai/" class="project-card">
                         <img src="Ger102-film.png" alt="Äpfel im Mai">
                         <div class="project-card-content">
                             <h3>Äpfel im Mai</h3>
@@ -454,7 +208,8 @@
                             <span class="project-date">2025</span>
                         </div>
                     </a>
-                    <a href="#" class="project-card">
+
+                    <a href="befolgte-schritte-detail.html" class="project-card">
                         <img src="Ger101-film.jpeg" alt="Befolgte Schritte">
                         <div class="project-card-content">
                             <h3>Befolgte Schritte</h3>
@@ -462,7 +217,8 @@
                             <span class="project-date">2024</span>
                         </div>
                     </a>
-                    <a href="#" class="project-card">
+
+                    <a href="what-could-go-wrong-detail.html" class="project-card">
                         <img src="shortfilm.jpeg" alt="What Could Go Wrong?">
                         <div class="project-card-content">
                             <h3>What Could Go Wrong?</h3>
@@ -470,7 +226,8 @@
                             <span class="project-date">2023 / 2024</span>
                         </div>
                     </a>
-                    <a href="#" class="project-card">
+
+                    <a href="sneakers-detail.html" class="project-card">
                         <img src="2nd-place.png" alt="Sneakers">
                         <div class="project-card-content">
                             <h3>Sneakers</h3>
@@ -497,19 +254,14 @@
             </div>
             <p class="copyright">&copy; 2026 Cornelia Manda. All Rights Reserved.</p>
         </footer>
-
     </div>
 
     <script>
         function scrollCarousel(direction) {
             const carousel = document.getElementById('projectCarousel');
             const scrollAmount = 380; 
-            carousel.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
+            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
         }
     </script>
-
 </body>
 </html>
