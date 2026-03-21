@@ -90,7 +90,7 @@
         .category-label h2 { color: white; font-size: 2em; margin: 0; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
 
         .uni-label {
-            color: #FFFFFF; /* Fixed visibility */
+            color: #FFFFFF;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
             font-size: 0.95em; 
             font-family: "Roboto", sans-serif;
@@ -114,15 +114,50 @@
         .carousel-section { background-color: rgba(221, 189, 190, 0.2); padding: 60px 0; margin-top: 40px; position: relative; }
         .carousel-title { text-align: center; color: #816B6E; font-size: 2.5em; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
         .carousel-wrapper { position: relative; padding: 0 80px; }
-        .carousel-container { display: flex; overflow-x: auto; gap: 30px; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; }
+        .carousel-container { display: flex; overflow-x: auto; gap: 30px; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; padding-bottom: 20px; }
         .carousel-container::-webkit-scrollbar { display: none; }
 
-        .project-card { flex: 0 0 350px; background: white; scroll-snap-align: start; box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.1); display: flex; flex-direction: column; }
-        .project-card img { width: 100%; height: 200px; object-fit: cover; }
+        /* CLICK MECHANIC: Enhanced Card Interactivity */
+        .project-card { 
+            flex: 0 0 350px; 
+            background: white; 
+            scroll-snap-align: start; 
+            box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.1); 
+            display: flex; 
+            flex-direction: column; 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth lift curve */
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px); /* Physical lift */
+            box-shadow: 15px 15px 0px rgba(201, 155, 155, 0.4); /* Mauve deep shadow */
+        }
+
+        .project-card img { width: 100%; height: 200px; object-fit: cover; transition: opacity 0.3s ease; }
+        .project-card:hover img { opacity: 0.9; }
+
         .project-card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
         .project-card h3 { color: #816B6E; margin: 0 0 10px 0; font-size: 1.4em; }
         .project-card p { color: #5D4F51; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px; font-family: "Roboto", sans-serif; }
-        .project-date { margin-top: auto; color: #C99B9B; font-weight: 700; text-transform: uppercase; font-size: 0.8em; letter-spacing: 1px; font-family: "Roboto", sans-serif; }
+
+        /* CLICK MECHANIC: Added "View Project" Call-to-action */
+        .view-link {
+            margin-top: auto;
+            font-family: "Playfair Display", serif;
+            font-weight: 700;
+            color: #816B6E;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-card:hover .view-link { color: #C99B9B; }
+
+        .project-date { margin-top: 10px; color: #C99B9B; font-weight: 700; text-transform: uppercase; font-size: 0.8em; letter-spacing: 1px; font-family: "Roboto", sans-serif; opacity: 0.7; }
 
         .carousel-arrow {
             position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%;
@@ -204,6 +239,7 @@
                         <div class="project-card-content">
                             <h3>Äpfel im Mai</h3>
                             <p>Award-winning short film created for GER102, focusing on vocabulary integration and visual storytelling.</p>
+                            <div class="view-link">View Project →</div>
                             <span class="project-date">2025</span>
                         </div>
                     </a>
@@ -213,6 +249,7 @@
                         <div class="project-card-content">
                             <h3>Befolgte Schritte</h3>
                             <p>Director and editor for this university short film project utilizing class-taught German vocabulary.</p>
+                            <div class="view-link">View Project →</div>
                             <span class="project-date">2024</span>
                         </div>
                     </a>
@@ -222,6 +259,7 @@
                         <div class="project-card-content">
                             <h3>What Could Go Wrong?</h3>
                             <p>A poignant film exploring personal anxiety and self-doubt. Won First Place at Eagles News Festival.</p>
+                            <div class="view-link">View Project →</div>
                             <span class="project-date">2023 / 2024</span>
                         </div>
                     </a>
@@ -231,6 +269,7 @@
                         <div class="project-card-content">
                             <h3>Sneakers</h3>
                             <p>A four-minute horror-comedy about a Grade 11 student. Winner of Outstanding Achievement in Film.</p>
+                            <div class="view-link">View Project →</div>
                             <span class="project-date">2022 / 2023</span>
                         </div>
                     </a>
