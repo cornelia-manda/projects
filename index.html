@@ -99,8 +99,18 @@
             padding: 40px 0; z-index: 10;
         }
 
-        .category-label h2 { color: white; font-size: 2em; margin: 0; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        /* Transition added for smooth color change */
+        .category-label h2 { 
+            color: white; 
+            font-size: 2em; 
+            margin: 0; 
+            font-weight: 600; 
+            letter-spacing: 1px; 
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
 
+        /* Transition added for smooth color change */
         .uni-label {
             color: #FFFFFF;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
@@ -118,9 +128,20 @@
             z-index: 15;
             transform-origin: bottom left;
             transform: rotate(90deg) translateX(-50%); 
+            transition: color 0.3s ease;
         }
 
+        /* UPDATED HOVER MECHANICS: Matches Portfolio style */
         .category-item:hover img { transform: scale(1.05); }
+
+        .category-item:hover .category-label h2 {
+            transform: rotate(-2deg);
+            color: #DDBDBE;
+        }
+
+        .category-item:hover .uni-label {
+            color: #DDBDBE;
+        }
 
         /* Carousel Section */
         .carousel-section { background-color: rgba(221, 189, 190, 0.2); padding: 60px 0; margin-top: 40px; position: relative; }
@@ -276,7 +297,6 @@
                             <span class="project-date">2024</span>
                         </div>
                     </a>
-
                 </div>
             </div>
         </section>
