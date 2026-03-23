@@ -74,24 +74,30 @@
         }
 
         .page-subtitle {
-            text-align: center;
-            color: #816B6E;
-            font-size: 1.2em;
-            margin: 0 0 40px 0;
-            font-family: "Roboto", sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            opacity: 0.8;
+            text-align: center; color: #816B6E; font-size: 1.2em; margin: 0 0 40px 0;
+            font-family: "Roboto", sans-serif; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 3px; opacity: 0.8;
         }
 
-        /* Category Grid Navigation */
+        /* Category Grid */
         .category-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 0 80px 60px 80px;
         }
 
         .category-item { position: relative; height: 400px; overflow: hidden; background-color: #fff; display: block; }
         .category-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+
+        /* Coming Soon Tag Styling */
+        .coming-soon-tag {
+            position: absolute; top: 20px; right: 20px; background-color: #C99B9B;
+            color: white; padding: 8px 20px; font-size: 0.85em; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 1.5px; border-radius: 5px;
+            z-index: 30; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            font-family: "Roboto", sans-serif;
+        }
+
+        .category-item.disabled { cursor: default; }
+        .category-item.disabled img { filter: grayscale(40%); opacity: 0.7; }
 
         .category-label {
             display: flex; align-items: center; justify-content: center; position: absolute;
@@ -100,45 +106,22 @@
         }
 
         .category-label h2 { 
-            color: white; 
-            font-size: 2em; 
-            margin: 0; 
-            font-weight: 600; 
-            letter-spacing: 1px; 
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+            color: white; font-size: 2em; margin: 0; font-weight: 600; 
+            letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s ease;
         }
 
         .uni-label {
-            color: #FFFFFF;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
-            font-size: 0.95em; 
-            font-family: "Roboto", sans-serif;
-            font-weight: 900; 
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            white-space: nowrap;
-            position: absolute;
-            left: 15px; 
-            top: 35%; 
-            line-height: 1; 
-            margin: 0;
-            z-index: 15;
-            transform-origin: bottom left;
-            transform: rotate(90deg) translateX(-50%); 
-            transition: color 0.3s ease;
+            color: #FFFFFF; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+            font-size: 0.95em; font-family: "Roboto", sans-serif; font-weight: 900; 
+            letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap;
+            position: absolute; left: 15px; top: 35%; line-height: 1; 
+            margin: 0; z-index: 15; transform-origin: bottom left;
+            transform: rotate(90deg) translateX(-50%); transition: color 0.3s ease;
         }
 
-        .category-item:hover img { transform: scale(1.05); }
-
-        .category-item:hover .category-label h2 {
-            transform: rotate(-2deg);
-            color: #DDBDBE;
-        }
-
-        .category-item:hover .uni-label {
-            color: #DDBDBE;
-        }
+        .category-item:not(.disabled):hover img { transform: scale(1.05); }
+        .category-item:not(.disabled):hover .category-label h2 { transform: rotate(-2deg); color: #DDBDBE; }
+        .category-item:not(.disabled):hover .uni-label { color: #DDBDBE; }
 
         /* Carousel Section */
         .carousel-section { background-color: rgba(221, 189, 190, 0.2); padding: 60px 0; margin-top: 40px; position: relative; }
@@ -148,43 +131,25 @@
         .carousel-container::-webkit-scrollbar { display: none; }
 
         .project-card { 
-            flex: 0 0 350px; 
-            background: white; 
-            scroll-snap-align: start; 
-            box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.1); 
-            display: flex; 
-            flex-direction: column; 
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            flex: 0 0 350px; background: white; scroll-snap-align: start; 
+            box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.1); display: flex; 
+            flex-direction: column; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: pointer;
         }
 
-        .project-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 15px 15px 0px rgba(201, 155, 155, 0.4);
-        }
-
+        .project-card:hover { transform: translateY(-12px); box-shadow: 15px 15px 0px rgba(201, 155, 155, 0.4); }
         .project-card img { width: 100%; height: 200px; object-fit: cover; transition: opacity 0.3s ease; }
         .project-card:hover img { opacity: 0.9; }
-
         .project-card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
         .project-card h3 { color: #816B6E; margin: 0 0 10px 0; font-size: 1.4em; }
         .project-card p { color: #5D4F51; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px; font-family: "Roboto", sans-serif; }
 
         .view-link {
-            margin-top: auto;
-            font-family: "Playfair Display", serif;
-            font-weight: 700;
-            color: #816B6E;
-            text-transform: uppercase;
-            font-size: 0.85em;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            margin-top: auto; font-family: "Playfair Display", serif; font-weight: 700;
+            color: #816B6E; text-transform: uppercase; font-size: 0.85em;
+            letter-spacing: 1px; display: flex; align-items: center; gap: 5px;
         }
-
         .project-card:hover .view-link { color: #C99B9B; }
-
         .project-date { margin-top: 10px; color: #C99B9B; font-weight: 700; text-transform: uppercase; font-size: 0.8em; letter-spacing: 1px; font-family: "Roboto", sans-serif; opacity: 0.7; }
 
         .carousel-arrow {
@@ -202,7 +167,6 @@
         .footer-table th { color: #816B6E; font-size: 1.1em; padding: 5px 10px 5px 0; vertical-align: middle; white-space: nowrap; }
         .footer-table th:not(:first-child) { padding-left: 30px; }
         .footer-table td { padding: 5px 0; font-family: "Roboto", sans-serif; vertical-align: middle; white-space: nowrap; }
-        .copyright { margin-top: 20px; opacity: 0.8; font-size: 0.8em; }
     </style>
 </head>
 <body>
@@ -252,11 +216,12 @@
                 <div class="category-label"><h2>Web & App</h2></div>
             </a>
             
-            <a href="#" class="category-item">
+            <div class="category-item disabled">
+                <div class="coming-soon-tag">Coming Soon</div>
                 <div class="uni-label">@ University of Waterloo</div>
                 <img src="graphic-thumb.png" alt="Graphic Design Category">
                 <div class="category-label"><h2>Graphic Design</h2></div>
-            </a>
+            </div>
         </main>
 
         <section class="carousel-section">
